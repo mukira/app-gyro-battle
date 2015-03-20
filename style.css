@@ -1,0 +1,154 @@
+/**
+ * GyroBattle styling
+ * 
+ */
+
+
+/* Font ****************************************/
+@font-face {
+	font-family: 'Montserrat';
+	src: url('assets/fonts/Montserrat/Montserrat-Regular.eot');
+	src: url('assets/fonts/Montserrat/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+		url('assets/fonts/Montserrat/Montserrat-Regular.woff') format('woff'),
+		url('assets/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype'),
+		url('assets/fonts/Montserrat/Montserrat-Regular.svg#Montserrat-regular') format('svg');
+}
+
+/**
+ * Base
+ * 
+ */
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 100;
+
+	background: url(assets/images/background.png);
+	background-size: 85px;
+	background-position: 30px;
+}
+
+p {
+	margin: 0.25em 0;
+	line-height: 1.5em;
+}
+
+img {
+	width: 100%;
+}
+
+/**
+ * Components
+ */
+
+/* Promptr ***********************************************/
+.promptr {
+	position: absolute;
+	width: 40%;
+	min-height: 80%;
+	left: 30%;
+	bottom: 10%;
+	padding: 1em;
+	line-height: 2em;
+
+	box-sizing: border-box;
+
+	color: #030303;
+	background: #ffffff;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+	z-index: 10; 
+}
+
+.promptr > div {
+	display: none;
+}
+
+.qrcode-block {
+	margin-top: 20px;
+}
+
+.qrcode-url {
+	font-size: 1.5em;
+	font-weight: bold;
+	line-height: 128px;
+}
+
+.qrcode-wrap img {
+	float: right;
+	width: 128px;
+	height: 128px;
+}
+
+
+/* Player ************************************************/
+.player-one, .player-two {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	top: 0;
+	padding: 1em;
+	color: #ffffff;
+
+	box-sizing: border-box;
+
+	transition: all .4s ease;
+	-moz-transition: all .4s ease;
+	-webkit-transition: all .4s ease;
+}
+
+.player-one { left: -50%; text-align: left;  padding-right: 21%; }
+.player-two { left: 100%; text-align: right; padding-left:  21%; }
+
+.player-one.active { left:  0%; }
+.player-two.active { left: 50%; }
+
+
+/* Position view *****************************************/
+.position-view {
+	width: 50%;
+	display: inline-block;
+}
+
+.position-view > span {
+	text-align: left;
+}
+
+.position-view-landscape {
+	border-top: 1px solid #ccc;
+}
+
+.position-view-landscape > span {
+	display: inline-block;
+	width: 33.3%;
+	text-align: center;
+}
+
+.alpha-view,
+.beta-view,
+.gamma-view {
+	display: block;
+	color: inherit;
+	border-color: inherit;
+
+	font-size: 3em;
+	line-height: 1.5em;
+}
+
+.position-view > span::before {
+	display: inline-block;
+	width: 1.5em;
+	height: 1.5em;
+	margin-right: 0.5em;
+	text-align: center;
+	border-right: 2px solid;
+}
+
+.position-view .alpha-view::before { content: 'α'; }
+.position-view .beta-view::before  { content: 'β'; }
+.position-view .gamma-view::before { content: 'γ'; }

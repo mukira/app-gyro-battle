@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <!-- Le meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Gyro Battle (powered by Liwe)</title>
+    <meta name="description" content="">
+    <meta name="robots" content="nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+    <!-- The DOM -->
+    <div id="player-one" class="player-one" style="background: #5599cc;">
+      <h1 class="headline"></h1>
+      <h2 class="info"></h2>
+      <div class="position-view">
+        <span class="alpha-view"></span><span class="beta-view"></span><span class="gamma-view"></span>
+      </div>
+    </div>
+    <div id="player-two" class="player-two" style="background: #cc99cc;">
+      <h1 class="headline"></h1>
+      <h2 class="info"></h2>
+      <div class="position-view">
+        <span class="alpha-view"></span><span class="beta-view"></span><span class="gamma-view"></span>
+      </div>
+    </div>
+
+    <!-- Prompt: interface with users -->
+    <div id="promptr" class="promptr">
+      
+      <div class="intro">
+        <h1>GyroBattle</h1>
+        <p>This game can be played by one or two players. The app will generate a position, your mission will be to find it with your smartphone. A position is based on 3 values: alpha, beta and gamma.</p>
+        <p>Your first try will be frustrating, but that's all the beauty of the game. The first player to reach 5 points wins.</p>
+        <p>Now grab your smartphone and go to the URL below. Once all players are connected, press the button on your remote to start the game.</p>
+        <div class="qrcode-block">
+          <div class="qrcode-wrap"></div>
+          <p class="qrcode-url"></p>
+        </div>
+      </div>
+
+      <div class="playing">
+        <h2>Game on!</h2>
+        <p>Here is the current position to find.</p>
+        <img src="assets/images/help.png">
+        <div class="position-view-landscape">
+          <span class="alpha-view">-1</span><span class="beta-view">3</span><span class="gamma-view">5</span>
+        </div>
+      </div>
+
+      <div class="error">
+        <h1>Ouch..</h1>
+        <p>Sorry to interupt the game but a problem has occur.</p>
+        <p class="error-label"></p>
+      </div>
+    </div>
+
+    <!-- Le script -->
+    <script type="text/javascript" src="//liwe.co/api/liwe.js"></script>
+    <script type="text/javascript" src="scripts/game.js"></script>
+    <script type="text/javascript" src="scripts/gyroBattle.js"></script>
+    <script type="text/javascript" src="scripts/player.js"></script>
+    <script type="text/javascript" src="scripts/promptr.js"></script>
+    <script type="text/javascript" src="scripts/qrcode.js"></script>
+    <script type="text/javascript" src="scripts/template.js"></script>
+    <script type="text/javascript" src="scripts/util.js"></script>
+
+    <script type="text/javascript">
+      // Init the battle
+      var myBattle = new GyroBattle({
+        key: 'k3Y4l1W3g1ThU85aMp1E4pP5'
+      });
+    </script>
+  </body>
+</html>
