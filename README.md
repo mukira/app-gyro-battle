@@ -1,5 +1,3 @@
-![Gyro Battle logo](assets/svg/logo.svg)
-
 # GyroBattle
 
 Try it on http://liwe.github.io/app-gyro-battle
